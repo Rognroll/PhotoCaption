@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+    <!-- Outer ring -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,4C10.27,4 4,10.27 4,18C4,25.73 10.27,32 18,32C25.73,32 32,25.73 32,18C32,10.27 25.73,4 18,4ZM18,29C11.93,29 7,24.07 7,18C7,11.93 11.93,7 18,7C24.07,7 29,11.93 29,18C29,24.07 24.07,29 18,29Z" />
+    <!-- Inner circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,11C14.13,11 11,14.13 11,18C11,21.87 14.13,25 18,25C21.87,25 25,21.87 25,18C25,14.13 21.87,11 18,11Z" />
+</vector>

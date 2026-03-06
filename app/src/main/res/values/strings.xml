@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PhotoCaption</string>
+
+    <!-- Camera screen -->
+    <string name="capture_button_desc">Foto aufnehmen</string>
+
+    <!-- Caption screen -->
+    <string name="photo_preview_desc">Aufgenommenes Foto</string>
+    <string name="hint_title">Titel</string>
+    <string name="hint_description">Beschreibung (optional)</string>
+    <string name="mic_title_desc">Titel per Sprache eingeben</string>
+    <string name="mic_desc_desc">Beschreibung per Sprache eingeben</string>
+    <string name="btn_save">Speichern</string>
+
+    <!-- GPS -->
+    <string name="gps_toggle_desc">GPS-Koordinaten ein/aus</string>
+    <string name="gps_searching">GPS …</string>
+    <string name="error_gps_unavailable">GPS nicht verfügbar</string>
+    <string name="permission_location_required">Standort-Berechtigung erforderlich</string>
+
+    <!-- Speech -->
+    <string name="speech_hint_title">Titel sprechen</string>
+    <string name="speech_hint_description">Beschreibung sprechen</string>
+
+    <!-- Feedback -->
+    <string name="photo_saved">Foto gespeichert</string>
+
+    <!-- Errors -->
+    <string name="error_title_required">Titel ist erforderlich</string>
+    <string name="error_load_photo">Foto konnte nicht geladen werden</string>
+    <string name="error_save_failed">Fehler beim Speichern: %s</string>
+    <string name="error_capture_failed">Aufnahme fehlgeschlagen</string>
+    <string name="error_camera_start">Kamera konnte nicht gestartet werden</string>
+    <string name="error_speech_unavailable">Spracherkennung nicht verfügbar</string>
+    <string name="permission_camera_required">Kamera-Berechtigung erforderlich</string>
+    <string name="permission_audio_required">Mikrofon-Berechtigung erforderlich</string>
+</resources>
