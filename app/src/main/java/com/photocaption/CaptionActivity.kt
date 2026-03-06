@@ -234,8 +234,11 @@ class CaptionActivity : AppCompatActivity() {
             drawDescriptionOnCanvas(canvas, description, mutableBitmap.width, mutableBitmap.height, scaleFactor)
         }
 
-        gpsCoords?.let { coords ->
-            drawGpsOnCanvas(canvas, coords, mutableBitmap.width, mutableBitmap.height, scaleFactor)
+        val gpsText = binding.tvGpsCoords.text
+            .takeIf { it.isNotEmpty() && it != getString(R.string.gps_searching) }
+            ?.toString()
+        if (gpsText != null) {
+            drawGpsOnCanvas(canvas, gpsText, mutableBitmap.width, scaleFactor)
         }
 
         persistToGallery(mutableBitmap)
@@ -291,13 +294,13 @@ class CaptionActivity : AppCompatActivity() {
     }
 
     /**
-     * GPS coordinates: bottom-right corner, single line, 8sp.
-     * Sits above the description bar if one is present.
+     * GPS coordinates: top-right corner, single line, 9sp.
      */
     private fun drawGpsOnCanvas(
-        canvas: Canvas, text: String, imgWidth: Int, imgHeight: Int, scaleFactor: Float
+        canvas: Canvas, text: String, imgWidth: Int, scaleFactor: Float
     ) {
-        val textSizePx = spToPx(8f) * scaleFactor
+        val textSizePx = spToPx(9f) * scaleFactor
+        val margin  = (8f * scaleFactor).toInt()
         val padding = (6f * scaleFactor).toInt()
 
         val textPaint = Paint().apply {
@@ -309,16 +312,11 @@ class CaptionActivity : AppCompatActivity() {
         val bgW = textWidth  + padding * 2
         val bgH = textHeight + padding * 2
 
-        // If description is also present, leave room for it (approx 1 line of 9sp + padding)
-        val descReserve = if (binding.etDescription.text.isNotEmpty()) {
-            (spToPx(9f) * scaleFactor + (8f * scaleFactor) * 2 + textPaint.descent()).toInt()
-        } else 0
-
-        val bgLeft = imgWidth  - bgW
-        val bgTop  = imgHeight - bgH - descReserve
+        val bgLeft = imgWidth - bgW - margin
+        val bgTop  = margin.toFloat()
 
         val bgPaint = Paint().apply { color = Color.argb(160, 0, 0, 0) }
-        canvas.drawRect(bgLeft, bgTop, imgWidth.toFloat(), bgTop + bgH, bgPaint)
+        canvas.drawRect(bgLeft, bgTop, bgLeft + bgW, bgTop + bgH, bgPaint)
         canvas.drawText(text, bgLeft + padding, bgTop + padding - textPaint.ascent(), textPaint)
     }
 

@@ -68,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- GPS toggle + live coordinates: bottom-right, above description bar -->
+    <!-- GPS toggle + live coordinates: top-right, below Save button -->
     <LinearLayout
         android:id="@+id/gpsContainer"
         android:layout_width="wrap_content"
@@ -76,8 +76,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="6dp"
-        app:layout_constraintBottom_toTopOf="@id/descContainer"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/btnSave"
         app:layout_constraintEnd_toEndOf="parent">
 
         <!-- Coordinates text – hidden until GPS is active and location is known -->
